@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control de Señales No Autorizadas · Simulador de Atenuación Pasiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <span class="header-tag">SIT · Ingeniería de Radiofrecuencia</span>
+      <h1>Control Conceptual de Señales No Autorizadas</h1>
+      <p class="subtitle">
+        Centros Penitenciarios · Atenuación Pasiva y Monitoreo Inteligente del Espectro
+      </p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel controls">
+      <h2 class="panel-title">Parámetros</h2>
+      <div id="controlsPanel" class="controls-body"></div>
+    </aside>
+
+    <section class="panel plan">
+      <h2 class="panel-title">Plano 2D · Infraestructura</h2>
+      <div class="plan-wrap">
+        <canvas id="planCanvas"></canvas>
+        <div id="planTooltip" class="plan-tooltip"></div>
+      </div>
+      <div class="legend">
+        <span class="lg-item"><i class="lg-dot" style="background:#00ff88"></i>Fuerte</span>
+        <span class="lg-item"><i class="lg-dot" style="background:#f0ff00"></i>Media</span>
+        <span class="lg-item"><i class="lg-dot" style="background:#ff9600"></i>Débil</span>
+        <span class="lg-item"><i class="lg-dot" style="background:#ff3355"></i>Bloqueada (&lt; −95 dBm)</span>
+      </div>
+    </section>
+
+    <aside class="panel telemetry">
+      <h2 class="panel-title">Telemetría</h2>
+      <div id="telemetryPanel" class="telemetry-body"></div>
+    </aside>
+  </main>
+
+  <section class="panel spectrum">
+    <h2 class="panel-title">Relación Frecuencia / Longitud de Onda (λ)</h2>
+    <canvas id="spectrumCanvas"></canvas>
+  </section>
+
+  <footer class="app-footer">
+    <p>
+      Simulador conceptual con fines académicos. La atenuación pasiva confina la señal dentro del
+      perímetro sin violar los derechos de los operadores concesionarios (Ley General de
+      Telecomunicaciones / Superintendencia de Telecomunicaciones).
+    </p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
